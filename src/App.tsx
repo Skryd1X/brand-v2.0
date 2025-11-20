@@ -119,7 +119,7 @@ function App() {
           Rezzy
         </div>
         <p style={{ fontSize: '1rem', color: theme.colors.mediumGray }}>
-          Брендбук © 2024. Все права защищены.
+          Brandbook © 2025. All rights reserved.
         </p>
       </footer>
     </div>
