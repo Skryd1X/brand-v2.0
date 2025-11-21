@@ -9,7 +9,6 @@ import {
   ShoppingBag,
   FileText,
 } from 'lucide-react';
-import appMock from '../../assets/{148DCD25-7111-42CF-AFEF-36A4C8400F43}.png';
 
 export default function ApplicationsSection() {
   const applications = [

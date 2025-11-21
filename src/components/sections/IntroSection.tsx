@@ -1,6 +1,5 @@
 import { theme } from '../../theme';
 import NeoCard from '../NeoCard';
-import logoRezzy from '../../assets/{B620A630-29AF-4A07-A8E3-8238DCB61CD6}.png';
 
 export default function IntroSection() {
   return (
