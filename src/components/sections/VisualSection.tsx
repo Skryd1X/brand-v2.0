@@ -3,7 +3,6 @@ import SectionHeader from '../SectionHeader';
 import NeoCard from '../NeoCard';
 import ColorPalette from '../ColorPalette';
 import { Check, X } from 'lucide-react';
-import logoRezzy from '../../assets/{B620A630-29AF-4A07-A8E3-8238DCB61CD6}.png';
 
 export default function VisualSection() {
   return (
