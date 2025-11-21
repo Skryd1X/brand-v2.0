@@ -12,8 +12,9 @@ export default function UISystemSection() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '4rem 8rem 4rem 12rem',
+        padding: '4rem 5vw 4rem 7vw', // адаптивные отступы
         position: 'relative',
+        boxSizing: 'border-box',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
@@ -27,7 +28,7 @@ export default function UISystemSection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '2rem',
             marginBottom: '3rem',
           }}
@@ -50,14 +51,15 @@ export default function UISystemSection() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  flexShrink: 0,
                 }}
               >
                 <Square size={28} color={theme.colors.white} />
               </div>
               <h3
                 style={{
-                  fontSize: '1.5rem',
-                  fontWeight: '700',
+                  fontSize: 'clamp(1.25rem, 2.1vw, 1.5rem)',
+                  fontWeight: 700,
                   color: theme.colors.white,
                 }}
               >
@@ -66,9 +68,9 @@ export default function UISystemSection() {
             </div>
             <p
               style={{
-                fontSize: '1.125rem',
+                fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
                 color: theme.colors.lightGray,
-                lineHeight: '1.7',
+                lineHeight: 1.7,
               }}
             >
               Интерфейс строится на мягких тенях и плавных бликах: элементы выглядят как выдавленные
@@ -95,14 +97,15 @@ export default function UISystemSection() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  flexShrink: 0,
                 }}
               >
                 <Circle size={28} color={theme.colors.white} />
               </div>
               <h3
                 style={{
-                  fontSize: '1.5rem',
-                  fontWeight: '700',
+                  fontSize: 'clamp(1.25rem, 2.1vw, 1.5rem)',
+                  fontWeight: 700,
                   color: theme.colors.white,
                 }}
               >
@@ -111,9 +114,9 @@ export default function UISystemSection() {
             </div>
             <p
               style={{
-                fontSize: '1.125rem',
+                fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
                 color: theme.colors.lightGray,
-                lineHeight: '1.7',
+                lineHeight: 1.7,
               }}
             >
               Основная форма элементов — вытянутые «пилюли» и карточки со скруглением 24–32 px.
@@ -139,14 +142,15 @@ export default function UISystemSection() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  flexShrink: 0,
                 }}
               >
                 <Zap size={28} color={theme.colors.white} />
               </div>
               <h3
                 style={{
-                  fontSize: '1.5rem',
-                  fontWeight: '700',
+                  fontSize: 'clamp(1.25rem, 2.1vw, 1.5rem)',
+                  fontWeight: 700,
                   color: theme.colors.white,
                 }}
               >
@@ -155,9 +159,9 @@ export default function UISystemSection() {
             </div>
             <p
               style={{
-                fontSize: '1.125rem',
+                fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
                 color: theme.colors.lightGray,
-                lineHeight: '1.7',
+                lineHeight: 1.7,
               }}
             >
               Ключевые действия подсвечиваются градиентом от #168777 к #16A085. Им оформляются
@@ -183,14 +187,15 @@ export default function UISystemSection() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  flexShrink: 0,
                 }}
               >
                 <Layers size={28} color={theme.colors.white} />
               </div>
               <h3
                 style={{
-                  fontSize: '1.5rem',
-                  fontWeight: '700',
+                  fontSize: 'clamp(1.25rem, 2.1vw, 1.5rem)',
+                  fontWeight: 700,
                   color: theme.colors.white,
                 }}
               >
@@ -199,9 +204,9 @@ export default function UISystemSection() {
             </div>
             <p
               style={{
-                fontSize: '1.125rem',
+                fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
                 color: theme.colors.lightGray,
-                lineHeight: '1.7',
+                lineHeight: 1.7,
               }}
             >
               Нижний слой — глубокий градиент фона, средний — неоморфные карточки, верхний —
@@ -215,8 +220,8 @@ export default function UISystemSection() {
         <NeoCard style={{ marginBottom: '3rem' }}>
           <h3
             style={{
-              fontSize: '1.75rem',
-              fontWeight: '700',
+              fontSize: 'clamp(1.4rem, 2.4vw, 1.75rem)',
+              fontWeight: 700,
               color: theme.colors.white,
               marginBottom: '2rem',
             }}
@@ -227,7 +232,7 @@ export default function UISystemSection() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
               gap: '2rem',
             }}
           >
@@ -235,8 +240,8 @@ export default function UISystemSection() {
             <div>
               <div
                 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '700',
+                  fontSize: 'clamp(1rem, 2.1vw, 1.125rem)',
+                  fontWeight: 700,
                   color: theme.colors.accentPrimary,
                   marginBottom: '1rem',
                 }}
@@ -257,8 +262,8 @@ export default function UISystemSection() {
                     background: theme.gradients.accent,
                     color: theme.colors.white,
                     border: 'none',
-                    fontSize: '1.125rem',
-                    fontWeight: '700',
+                    fontSize: 'clamp(1rem, 2.1vw, 1.125rem)',
+                    fontWeight: 700,
                     cursor: 'pointer',
                     boxShadow: theme.shadows.glow,
                     transition: 'all 0.3s ease',
@@ -281,8 +286,8 @@ export default function UISystemSection() {
                     background: 'transparent',
                     color: theme.colors.accentPrimary,
                     border: `2px solid ${theme.colors.accentPrimary}`,
-                    fontSize: '1.125rem',
-                    fontWeight: '700',
+                    fontSize: 'clamp(1rem, 2.1vw, 1.125rem)',
+                    fontWeight: 700,
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
                   }}
@@ -304,8 +309,8 @@ export default function UISystemSection() {
             <div>
               <div
                 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '700',
+                  fontSize: 'clamp(1rem, 2.1vw, 1.125rem)',
+                  fontWeight: 700,
                   color: theme.colors.accentPrimary,
                   marginBottom: '1rem',
                 }}
@@ -322,8 +327,8 @@ export default function UISystemSection() {
               >
                 <h4
                   style={{
-                    fontSize: '1.25rem',
-                    fontWeight: '700',
+                    fontSize: 'clamp(1.1rem, 2.2vw, 1.25rem)',
+                    fontWeight: 700,
                     color: theme.colors.white,
                     marginBottom: '0.5rem',
                   }}
@@ -332,7 +337,7 @@ export default function UISystemSection() {
                 </h4>
                 <p
                   style={{
-                    fontSize: '1rem',
+                    fontSize: '0.95rem',
                     color: theme.colors.lightGray,
                     marginBottom: '1rem',
                   }}
@@ -343,6 +348,7 @@ export default function UISystemSection() {
                   style={{
                     display: 'flex',
                     gap: '0.5rem',
+                    flexWrap: 'wrap',
                   }}
                 >
                   <div
@@ -352,7 +358,7 @@ export default function UISystemSection() {
                       background: theme.gradients.accent,
                       color: theme.colors.white,
                       fontSize: '0.875rem',
-                      fontWeight: '600',
+                      fontWeight: 600,
                     }}
                   >
                     Сегодня · 19:30
@@ -364,7 +370,7 @@ export default function UISystemSection() {
                       background: theme.colors.baseNavy,
                       color: theme.colors.lightGray,
                       fontSize: '0.875rem',
-                      fontWeight: '600',
+                      fontWeight: 600,
                     }}
                   >
                     Свободно: 3 стола
@@ -379,8 +385,8 @@ export default function UISystemSection() {
         <NeoCard>
           <h3
             style={{
-              fontSize: '1.75rem',
-              fontWeight: '700',
+              fontSize: 'clamp(1.4rem, 2.4vw, 1.75rem)',
+              fontWeight: 700,
               color: theme.colors.white,
               marginBottom: '1.5rem',
             }}
@@ -389,9 +395,9 @@ export default function UISystemSection() {
           </h3>
           <p
             style={{
-              fontSize: '1.125rem',
+              fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
               color: theme.colors.lightGray,
-              lineHeight: '1.7',
+              lineHeight: 1.7,
               marginBottom: '2rem',
             }}
           >
@@ -399,7 +405,14 @@ export default function UISystemSection() {
             8: 8 / 16 / 24 / 32 / 40 / 48 px. Это упрощает дизайн и разработку, а интерфейс выглядит
             цельно на всех экранах.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-end' }}>
+          <div
+            style={{
+              display: 'flex',
+              gap: '1rem',
+              alignItems: 'flex-end',
+              flexWrap: 'wrap',
+            }}
+          >
             {[8, 16, 24, 32, 40, 48].map((size) => (
               <div key={size} style={{ textAlign: 'center' }}>
                 <div
@@ -430,10 +443,12 @@ export default function UISystemSection() {
           position: 'absolute',
           bottom: '2rem',
           right: '4rem',
-          fontSize: '1rem',
+          fontSize: 'clamp(0.75rem, 1.6vw, 1rem)',
           color: theme.colors.mediumGray,
-          fontWeight: '600',
+          fontWeight: 600,
           letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
         }}
       >
         06 / UI-СИСТЕМА REZZY

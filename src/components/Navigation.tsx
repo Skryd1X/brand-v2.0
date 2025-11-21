@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Home, Target, Users, MessageCircle, Palette, Image, FileText } from 'lucide-react';
 import { theme } from '../theme';
 
@@ -17,10 +18,35 @@ const sections = [
 ];
 
 export default function Navigation({ activeSection, onNavigate }: NavigationProps) {
-  return (
-    <nav
-      style={{
-        position: 'fixed',
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const navStyle = isMobile
+    ? {
+        position: 'fixed' as const,
+        left: '50%',
+        bottom: '1.5rem',
+        transform: 'translateX(-50%)',
+        zIndex: 100,
+        background: theme.colors.baseNavy,
+        borderRadius: 9999,
+        padding: '0.75rem',
+        boxShadow: theme.shadows.neo,
+        maxWidth: '100%',
+      }
+    : {
+        position: 'fixed' as const,
         left: '2rem',
         top: '50%',
         transform: 'translateY(-50%)',
@@ -29,9 +55,18 @@ export default function Navigation({ activeSection, onNavigate }: NavigationProp
         borderRadius: theme.borderRadius.md,
         padding: '1.5rem 1rem',
         boxShadow: theme.shadows.neo,
-      }}
-    >
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      };
+
+  return (
+    <nav style={navStyle}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: isMobile ? 'row' : 'column',
+          gap: isMobile ? '0.75rem' : '1rem',
+          alignItems: 'center',
+        }}
+      >
         {sections.map((section) => {
           const Icon = section.icon;
           const isActive = activeSection === section.id;
@@ -41,9 +76,9 @@ export default function Navigation({ activeSection, onNavigate }: NavigationProp
               key={section.id}
               onClick={() => onNavigate(section.id)}
               style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: theme.borderRadius.sm,
+                width: isMobile ? '40px' : '48px',
+                height: isMobile ? '40px' : '48px',
+                borderRadius: 9999,
                 border: 'none',
                 background: isActive ? theme.gradients.accent : 'transparent',
                 color: isActive ? theme.colors.white : theme.colors.mediumGray,
@@ -52,6 +87,7 @@ export default function Navigation({ activeSection, onNavigate }: NavigationProp
                 alignItems: 'center',
                 justifyContent: 'center',
                 transition: 'all 0.3s ease',
+                flexShrink: 0,
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {
@@ -67,7 +103,7 @@ export default function Navigation({ activeSection, onNavigate }: NavigationProp
               }}
               title={section.label}
             >
-              <Icon size={24} />
+              <Icon size={isMobile ? 20 : 24} />
             </button>
           );
         })}

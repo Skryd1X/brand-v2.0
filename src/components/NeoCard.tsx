@@ -14,9 +14,10 @@ export default function NeoCard({ children, gradient, style, hover = false }: Ne
       style={{
         background: gradient || theme.colors.baseNavy,
         borderRadius: theme.borderRadius.md,
-        padding: '2rem',
+        padding: 'clamp(1.5rem, 2.2vw, 2rem)',
         boxShadow: theme.shadows.neo,
         transition: 'all 0.3s ease',
+        boxSizing: 'border-box',
         ...style,
       }}
       onMouseEnter={(e) => {

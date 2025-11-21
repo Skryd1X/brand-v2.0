@@ -43,8 +43,9 @@ export default function ToneSection() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '4rem 8rem 4rem 12rem',
+        padding: '4rem 5vw 4rem 7vw', // адаптивные отступы
         position: 'relative',
+        boxSizing: 'border-box',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
@@ -54,10 +55,11 @@ export default function ToneSection() {
           subtitle="Как звучит Rezzy в приложении, рекламе и коммуникации с пользователем"
         />
 
+        {/* Принципы тона */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '2rem',
             marginBottom: '2rem',
           }}
@@ -83,14 +85,15 @@ export default function ToneSection() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
+                      flexShrink: 0,
                     }}
                   >
                     <Icon size={28} color={theme.colors.white} />
                   </div>
                   <h3
                     style={{
-                      fontSize: '1.5rem',
-                      fontWeight: '700',
+                      fontSize: 'clamp(1.25rem, 2.1vw, 1.5rem)',
+                      fontWeight: 700,
                       color: theme.colors.white,
                     }}
                   >
@@ -99,9 +102,9 @@ export default function ToneSection() {
                 </div>
                 <p
                   style={{
-                    fontSize: '1.125rem',
+                    fontSize: 'clamp(1rem, 2.1vw, 1.125rem)',
                     color: theme.colors.lightGray,
-                    lineHeight: '1.7',
+                    lineHeight: 1.7,
                     marginBottom: '1.5rem',
                   }}
                 >
@@ -119,7 +122,7 @@ export default function ToneSection() {
                       fontSize: '0.875rem',
                       color: theme.colors.mediumGray,
                       marginBottom: '0.75rem',
-                      fontWeight: '600',
+                      fontWeight: 600,
                     }}
                   >
                     Примеры формулировок:
@@ -142,19 +145,26 @@ export default function ToneSection() {
           })}
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+        {/* Как пишем / чего избегаем */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '2rem',
+          }}
+        >
           <NeoCard>
             <h3
               style={{
-                fontSize: '1.75rem',
-                fontWeight: '700',
+                fontSize: 'clamp(1.25rem, 2.2vw, 1.75rem)',
+                fontWeight: 700,
                 color: theme.colors.white,
                 marginBottom: '1rem',
               }}
             >
               ✓ Как пишем
             </h3>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {[
                 'Короткие, понятные фразы без сложных оборотов.',
                 'Фокус на выгоде пользователя: время, удобство, статус.',
@@ -164,17 +174,18 @@ export default function ToneSection() {
                 <li
                   key={i}
                   style={{
-                    fontSize: '1.125rem',
+                    fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
                     color: theme.colors.lightGray,
                     marginBottom: '0.75rem',
                     paddingLeft: '1.5rem',
                     position: 'relative',
+                    lineHeight: 1.6,
                   }}
                 >
                   <span
                     style={{
                       position: 'absolute',
-                      left: '0',
+                      left: 0,
                       color: theme.colors.accentPrimary,
                     }}
                   >
@@ -189,15 +200,15 @@ export default function ToneSection() {
           <NeoCard>
             <h3
               style={{
-                fontSize: '1.75rem',
-                fontWeight: '700',
+                fontSize: 'clamp(1.25rem, 2.2vw, 1.75rem)',
+                fontWeight: 700,
                 color: theme.colors.white,
                 marginBottom: '1rem',
               }}
             >
               ✗ Чего избегаем
             </h3>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {[
                 'Канцелярита: «осуществите бронирование», «оформите заявку» и т.п.',
                 'Чрезмерной формальности и сухих обращений.',
@@ -207,17 +218,18 @@ export default function ToneSection() {
                 <li
                   key={i}
                   style={{
-                    fontSize: '1.125rem',
+                    fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
                     color: theme.colors.lightGray,
                     marginBottom: '0.75rem',
                     paddingLeft: '1.5rem',
                     position: 'relative',
+                    lineHeight: 1.6,
                   }}
                 >
                   <span
                     style={{
                       position: 'absolute',
-                      left: '0',
+                      left: 0,
                       color: theme.colors.mediumGray,
                     }}
                   >
@@ -236,10 +248,12 @@ export default function ToneSection() {
           position: 'absolute',
           bottom: '2rem',
           right: '4rem',
-          fontSize: '1rem',
+          fontSize: 'clamp(0.75rem, 1.6vw, 1rem)',
           color: theme.colors.mediumGray,
-          fontWeight: '600',
+          fontWeight: 600,
           letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
         }}
       >
         03 / TONE OF VOICE

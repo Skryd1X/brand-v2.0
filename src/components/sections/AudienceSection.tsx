@@ -47,8 +47,9 @@ export default function AudienceSection() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '4rem 8rem 4rem 12rem',
+        padding: '4rem 5vw 4rem 7vw', // адаптивные отступы
         position: 'relative',
+        boxSizing: 'border-box',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
@@ -58,10 +59,11 @@ export default function AudienceSection() {
           subtitle="Кому нужен Rezzy: ключевые сегменты, поведение и боли пользователей"
         />
 
+        {/* Сегменты аудитории */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '2rem',
             marginBottom: '2rem',
           }}
@@ -73,7 +75,7 @@ export default function AudienceSection() {
                 <div
                   style={{
                     display: 'flex',
-                    alignItems: 'start',
+                    alignItems: 'flex-start',
                     gap: '1.5rem',
                     marginBottom: '1.5rem',
                   }}
@@ -95,19 +97,19 @@ export default function AudienceSection() {
                   <div>
                     <h3
                       style={{
-                        fontSize: '1.5rem',
-                        fontWeight: '700',
+                        fontSize: 'clamp(1.25rem, 2.1vw, 1.5rem)',
+                        fontWeight: 700,
                         color: theme.colors.white,
-                        marginBottom: '0.5rem',
+                        marginBottom: '0.4rem',
                       }}
                     >
                       {segment.title}
                     </h3>
                     <span
                       style={{
-                        fontSize: '1rem',
+                        fontSize: '0.95rem',
                         color: theme.colors.accentPrimary,
-                        fontWeight: '600',
+                        fontWeight: 600,
                       }}
                     >
                       {segment.age}
@@ -116,9 +118,9 @@ export default function AudienceSection() {
                 </div>
                 <p
                   style={{
-                    fontSize: '1.125rem',
+                    fontSize: 'clamp(1rem, 2.1vw, 1.125rem)',
                     color: theme.colors.lightGray,
-                    lineHeight: '1.7',
+                    lineHeight: 1.7,
                   }}
                 >
                   {segment.description}
@@ -128,11 +130,12 @@ export default function AudienceSection() {
           })}
         </div>
 
+        {/* Общие инсайты и боли */}
         <NeoCard>
           <h3
             style={{
-              fontSize: '1.75rem',
-              fontWeight: '700',
+              fontSize: 'clamp(1.25rem, 2.2vw, 1.75rem)',
+              fontWeight: 700,
               color: theme.colors.white,
               marginBottom: '1rem',
             }}
@@ -142,9 +145,9 @@ export default function AudienceSection() {
 
           <p
             style={{
-              fontSize: '1.125rem',
+              fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
               color: theme.colors.lightGray,
-              lineHeight: '1.7',
+              lineHeight: 1.7,
               marginBottom: '1.5rem',
             }}
           >
@@ -152,10 +155,11 @@ export default function AudienceSection() {
             цифровые сервисы, которые экономят время и снимают необходимость лишних звонков и уточнений.
           </p>
 
+          {/* Цифры/инсайты */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
               gap: '2rem',
               marginTop: '1rem',
               marginBottom: '2rem',
@@ -164,8 +168,8 @@ export default function AudienceSection() {
             <div>
               <div
                 style={{
-                  fontSize: '2.5rem',
-                  fontWeight: '800',
+                  fontSize: 'clamp(2rem, 3vw, 2.5rem)',
+                  fontWeight: 800,
                   background: theme.gradients.accent,
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -174,15 +178,21 @@ export default function AudienceSection() {
               >
                 85%
               </div>
-              <p style={{ fontSize: '1rem', color: theme.colors.lightGray }}>
+              <p
+                style={{
+                  fontSize: '0.95rem',
+                  color: theme.colors.lightGray,
+                  lineHeight: 1.6,
+                }}
+              >
                 Используют смартфон как основной инструмент для решения повседневных задач.
               </p>
             </div>
             <div>
               <div
                 style={{
-                  fontSize: '2.5rem',
-                  fontWeight: '800',
+                  fontSize: 'clamp(2rem, 3vw, 2.5rem)',
+                  fontWeight: 800,
                   background: theme.gradients.accent,
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -191,15 +201,21 @@ export default function AudienceSection() {
               >
                 70%
               </div>
-              <p style={{ fontSize: '1rem', color: theme.colors.lightGray }}>
+              <p
+                style={{
+                  fontSize: '0.95rem',
+                  color: theme.colors.lightGray,
+                  lineHeight: 1.6,
+                }}
+              >
                 Предпочитают онлайн-бронирование звонкам и перепискам в мессенджерах.
               </p>
             </div>
             <div>
               <div
                 style={{
-                  fontSize: '2.5rem',
-                  fontWeight: '800',
+                  fontSize: 'clamp(2rem, 3vw, 2.5rem)',
+                  fontWeight: 800,
                   background: theme.gradients.accent,
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -208,7 +224,13 @@ export default function AudienceSection() {
               >
                 92%
               </div>
-              <p style={{ fontSize: '1rem', color: theme.colors.lightGray }}>
+              <p
+                style={{
+                  fontSize: '0.95rem',
+                  color: theme.colors.lightGray,
+                  lineHeight: 1.6,
+                }}
+              >
                 Считают экономию времени ключевым фактором при выборе сервиса.
               </p>
             </div>
@@ -216,21 +238,22 @@ export default function AudienceSection() {
 
           <h4
             style={{
-              fontSize: '1.25rem',
-              fontWeight: '700',
+              fontSize: 'clamp(1.1rem, 2vw, 1.25rem)',
+              fontWeight: 700,
               color: theme.colors.white,
               marginBottom: '0.75rem',
             }}
           >
             Болевые точки текущего рынка
           </h4>
+
           <ul
             style={{
               listStyle: 'none',
               padding: 0,
               margin: 0,
               display: 'grid',
-              gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
               gap: '0.75rem 2rem',
             }}
           >
@@ -240,7 +263,10 @@ export default function AudienceSection() {
               'Нет прозрачного подтверждения брони и уведомлений для гостей.',
               'Сложно сравнить разные заведения и быстро найти свободные места.',
             ].map((point, idx) => (
-              <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+              <li
+                key={idx}
+                style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}
+              >
                 <span
                   style={{
                     width: '8px',
@@ -253,9 +279,9 @@ export default function AudienceSection() {
                 />
                 <span
                   style={{
-                    fontSize: '1rem',
+                    fontSize: '0.95rem',
                     color: theme.colors.lightGray,
-                    lineHeight: '1.6',
+                    lineHeight: 1.6,
                   }}
                 >
                   {point}
@@ -271,10 +297,12 @@ export default function AudienceSection() {
           position: 'absolute',
           bottom: '2rem',
           right: '4rem',
-          fontSize: '1rem',
+          fontSize: 'clamp(0.75rem, 1.6vw, 1rem)',
           color: theme.colors.mediumGray,
-          fontWeight: '600',
+          fontWeight: 600,
           letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
         }}
       >
         02 / ЦЕЛЕВАЯ АУДИТОРИЯ

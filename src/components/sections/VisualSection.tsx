@@ -3,6 +3,7 @@ import SectionHeader from '../SectionHeader';
 import NeoCard from '../NeoCard';
 import ColorPalette from '../ColorPalette';
 import { Check, X } from 'lucide-react';
+import logoRezzy from '../../assets/{B620A630-29AF-4A07-A8E3-8238DCB61CD6}.png';
 
 export default function VisualSection() {
   return (
@@ -13,8 +14,9 @@ export default function VisualSection() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '4rem 8rem 4rem 12rem',
+        padding: '4rem 5vw 4rem 7vw', // адаптивные отступы
         position: 'relative',
+        boxSizing: 'border-box',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
@@ -24,12 +26,14 @@ export default function VisualSection() {
           subtitle="Логотип, цветовая палитра и фирменный стиль Rezzy"
         />
 
+        {/* Логотип + описание */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1.5fr',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '2rem',
             marginBottom: '3rem',
+            alignItems: 'stretch',
           }}
         >
           <NeoCard
@@ -39,15 +43,18 @@ export default function VisualSection() {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              minHeight: '400px',
+              width: '100%',
+              maxWidth: '420px',
+              margin: '0 auto',
+              aspectRatio: '1 / 1',
             }}
           >
             <img
-              src="/src/assets/(B620A630-29AF-4A07-A8E3-8238DCB61CD6).png"
+              src={logoRezzy}
               alt="Rezzy Logo"
               style={{
-                width: '240px',
-                height: '240px',
+                width: '70%',
+                height: '70%',
                 objectFit: 'contain',
                 marginBottom: '1.5rem',
                 filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))',
@@ -55,8 +62,8 @@ export default function VisualSection() {
             />
             <div
               style={{
-                fontSize: '1.25rem',
-                fontWeight: '700',
+                fontSize: 'clamp(1.1rem, 2vw, 1.25rem)',
+                fontWeight: 700,
                 color: theme.colors.white,
                 textAlign: 'center',
               }}
@@ -68,8 +75,8 @@ export default function VisualSection() {
           <NeoCard>
             <h3
               style={{
-                fontSize: '1.75rem',
-                fontWeight: '700',
+                fontSize: 'clamp(1.4rem, 2.4vw, 1.75rem)',
+                fontWeight: 700,
                 color: theme.colors.white,
                 marginBottom: '1.5rem',
               }}
@@ -78,9 +85,9 @@ export default function VisualSection() {
             </h3>
             <p
               style={{
-                fontSize: '1.125rem',
+                fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
                 color: theme.colors.lightGray,
-                lineHeight: '1.7',
+                lineHeight: 1.7,
                 marginBottom: '2rem',
               }}
             >
@@ -99,8 +106,8 @@ export default function VisualSection() {
             >
               <h4
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: '700',
+                  fontSize: 'clamp(1.1rem, 2.1vw, 1.25rem)',
+                  fontWeight: 700,
                   color: theme.colors.white,
                   marginBottom: '1rem',
                 }}
@@ -117,7 +124,7 @@ export default function VisualSection() {
                       background: theme.colors.accentPrimary,
                     }}
                   />
-                  <span style={{ color: theme.colors.lightGray, fontSize: '1rem' }}>
+                  <span style={{ color: theme.colors.lightGray, fontSize: '0.95rem', lineHeight: 1.6 }}>
                     <strong>Основная версия:</strong> логотип с фирменным фиолетовым градиентом для цифровой
                     среды, презентаций и ключевых носителей.
                   </span>
@@ -131,7 +138,7 @@ export default function VisualSection() {
                       background: theme.colors.accentPrimary,
                     }}
                   />
-                  <span style={{ color: theme.colors.lightGray, fontSize: '1rem' }}>
+                  <span style={{ color: theme.colors.lightGray, fontSize: '0.95rem', lineHeight: 1.6 }}>
                     <strong>Монохром:</strong> чёрный или белый логотип для печати, тиснения и случаев, когда
                     цвет ограничен.
                   </span>
@@ -145,7 +152,7 @@ export default function VisualSection() {
                       background: theme.colors.accentPrimary,
                     }}
                   />
-                  <span style={{ color: theme.colors.lightGray, fontSize: '1rem' }}>
+                  <span style={{ color: theme.colors.lightGray, fontSize: '0.95rem', lineHeight: 1.6 }}>
                     <strong>Инверсия:</strong> белый знак на фирменном тёмном фоне — для промо, баннеров и
                     цифровых карточек.
                   </span>
@@ -155,10 +162,11 @@ export default function VisualSection() {
           </NeoCard>
         </div>
 
+        {/* Правила / запрещено */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '2rem',
             marginBottom: '3rem',
           }}
@@ -166,8 +174,8 @@ export default function VisualSection() {
           <NeoCard>
             <h3
               style={{
-                fontSize: '1.5rem',
-                fontWeight: '700',
+                fontSize: 'clamp(1.3rem, 2.2vw, 1.5rem)',
+                fontWeight: 700,
                 color: theme.colors.white,
                 marginBottom: '1.5rem',
                 display: 'flex',
@@ -178,7 +186,7 @@ export default function VisualSection() {
               <Check size={28} color={theme.colors.accentPrimary} />
               Правила использования
             </h3>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {[
                 'Минимальный размер: 32 px по высоте для digital, 15 mm — для печати.',
                 'Охранная зона: отступ не менее высоты буквы «R» от края до любых элементов.',
@@ -188,18 +196,18 @@ export default function VisualSection() {
                 <li
                   key={i}
                   style={{
-                    fontSize: '1rem',
+                    fontSize: '0.95rem',
                     color: theme.colors.lightGray,
                     marginBottom: '1rem',
                     paddingLeft: '1.5rem',
                     position: 'relative',
-                    lineHeight: '1.6',
+                    lineHeight: 1.6,
                   }}
                 >
                   <span
                     style={{
                       position: 'absolute',
-                      left: '0',
+                      left: 0,
                       color: theme.colors.accentPrimary,
                     }}
                   >
@@ -214,8 +222,8 @@ export default function VisualSection() {
           <NeoCard>
             <h3
               style={{
-                fontSize: '1.5rem',
-                fontWeight: '700',
+                fontSize: 'clamp(1.3rem, 2.2vw, 1.5rem)',
+                fontWeight: 700,
                 color: theme.colors.white,
                 marginBottom: '1.5rem',
                 display: 'flex',
@@ -226,7 +234,7 @@ export default function VisualSection() {
               <X size={28} color="#FF6B6B" />
               Запрещено
             </h3>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {[
                 'Искажать пропорции, растягивать логотип по вертикали или горизонтали.',
                 'Перекрашивать логотип в небрендовые цвета или добавлять случайные градиенты.',
@@ -236,18 +244,18 @@ export default function VisualSection() {
                 <li
                   key={i}
                   style={{
-                    fontSize: '1rem',
+                    fontSize: '0.95rem',
                     color: theme.colors.lightGray,
                     marginBottom: '1rem',
                     paddingLeft: '1.5rem',
                     position: 'relative',
-                    lineHeight: '1.6',
+                    lineHeight: 1.6,
                   }}
                 >
                   <span
                     style={{
                       position: 'absolute',
-                      left: '0',
+                      left: 0,
                       color: '#FF6B6B',
                     }}
                   >
@@ -260,11 +268,12 @@ export default function VisualSection() {
           </NeoCard>
         </div>
 
+        {/* Цвета */}
         <div style={{ marginBottom: '3rem' }}>
           <h3
             style={{
-              fontSize: '2rem',
-              fontWeight: '700',
+              fontSize: 'clamp(1.6rem, 2.6vw, 2rem)',
+              fontWeight: 700,
               color: theme.colors.white,
               marginBottom: '2rem',
             }}
@@ -274,11 +283,12 @@ export default function VisualSection() {
           <ColorPalette />
         </div>
 
+        {/* Типографика */}
         <NeoCard>
           <h3
             style={{
-              fontSize: '1.75rem',
-              fontWeight: '700',
+              fontSize: 'clamp(1.4rem, 2.4vw, 1.75rem)',
+              fontWeight: 700,
               color: theme.colors.white,
               marginBottom: '1.5rem',
             }}
@@ -288,7 +298,7 @@ export default function VisualSection() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
               gap: '2rem',
             }}
           >
@@ -296,7 +306,7 @@ export default function VisualSection() {
               <div
                 style={{
                   fontSize: '1.25rem',
-                  fontWeight: '700',
+                  fontWeight: 700,
                   color: theme.colors.accentPrimary,
                   marginBottom: '1rem',
                 }}
@@ -305,16 +315,23 @@ export default function VisualSection() {
               </div>
               <div
                 style={{
-                  fontSize: '2rem',
-                  fontWeight: '700',
+                  fontSize: 'clamp(1.6rem, 2.4vw, 2rem)',
+                  fontWeight: 700,
                   color: theme.colors.white,
                   marginBottom: '0.5rem',
-                  fontFamily: '"Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+                  fontFamily:
+                    '"Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
                 }}
               >
                 Montserrat Bold
               </div>
-              <p style={{ fontSize: '1rem', color: theme.colors.lightGray }}>
+              <p
+                style={{
+                  fontSize: '0.95rem',
+                  color: theme.colors.lightGray,
+                  lineHeight: 1.6,
+                }}
+              >
                 Используется для H1–H2, ключевых заголовков, кнопок и CTA-элементов.
               </p>
             </div>
@@ -322,7 +339,7 @@ export default function VisualSection() {
               <div
                 style={{
                   fontSize: '1.25rem',
-                  fontWeight: '700',
+                  fontWeight: 700,
                   color: theme.colors.accentPrimary,
                   marginBottom: '1rem',
                 }}
@@ -331,8 +348,8 @@ export default function VisualSection() {
               </div>
               <div
                 style={{
-                  fontSize: '1.5rem',
-                  fontWeight: '400',
+                  fontSize: 'clamp(1.3rem, 2.2vw, 1.5rem)',
+                  fontWeight: 400,
                   color: theme.colors.white,
                   marginBottom: '0.5rem',
                   fontFamily:
@@ -341,7 +358,13 @@ export default function VisualSection() {
               >
                 Open Sans Regular
               </div>
-              <p style={{ fontSize: '1rem', color: theme.colors.lightGray }}>
+              <p
+                style={{
+                  fontSize: '0.95rem',
+                  color: theme.colors.lightGray,
+                  lineHeight: 1.6,
+                }}
+              >
                 Для длинных текстов, описаний и интерфейсных блоков. Обеспечивает хорошую читаемость в
                 приложении и на сайте.
               </p>
@@ -355,10 +378,12 @@ export default function VisualSection() {
           position: 'absolute',
           bottom: '2rem',
           right: '4rem',
-          fontSize: '1rem',
+          fontSize: 'clamp(0.75rem, 1.6vw, 1rem)',
           color: theme.colors.mediumGray,
-          fontWeight: '600',
+          fontWeight: 600,
           letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
         }}
       >
         04 / ВИЗУАЛЬНАЯ АЙДЕНТИКА

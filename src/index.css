@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,18 +21,24 @@ body {
   overflow-x: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* Печать / экспорт в PDF */
 @media print {
   @page {
-    size: A4;
+    /* A4 в альбомной ориентации */
+    size: A4 landscape;
     margin: 1cm;
   }
 
+  html,
   body {
-    background: white !important;
+    background: #ffffff !important;
+    /* стараемся сохранить цвета / градиенты как на сайте */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    overflow: visible !important;
   }
 
   /* скрываем только то, что реально не нужно в PDF */
@@ -40,9 +50,24 @@ html {
     display: none !important;
   }
 
-  /* каждая секция — с новой страницы, без разрывов внутри */
+  /* основной контент брендбука */
+  #brandbook-content {
+    width: 100% !important;
+  }
+
+  /* каждая секция — отдельная страница, без разрывов внутри */
   section {
     page-break-inside: avoid;
+    break-inside: avoid;
     page-break-after: always;
+    break-after: page;
+  }
+
+  /* футер остаётся, но без жёсткого разрыва после него */
+  footer {
+    page-break-inside: avoid;
+    page-break-after: auto;
+    break-inside: avoid;
+    break-after: auto;
   }
 }

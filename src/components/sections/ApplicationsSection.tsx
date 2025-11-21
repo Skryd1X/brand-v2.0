@@ -9,6 +9,7 @@ import {
   ShoppingBag,
   FileText,
 } from 'lucide-react';
+import appMock from '../../assets/{148DCD25-7111-42CF-AFEF-36A4C8400F43}.png';
 
 export default function ApplicationsSection() {
   const applications = [
@@ -64,8 +65,9 @@ export default function ApplicationsSection() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '4rem 8rem 4rem 12rem',
+        padding: '4rem 5vw 4rem 7vw', // адаптивные отступы
         position: 'relative',
+        boxSizing: 'border-box',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
@@ -79,7 +81,7 @@ export default function ApplicationsSection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '2rem',
             marginBottom: '3rem',
           }}
@@ -99,14 +101,15 @@ export default function ApplicationsSection() {
                     justifyContent: 'center',
                     marginBottom: '1.5rem',
                     boxShadow: '0 8px 32px rgba(22, 160, 133, 0.3)',
+                    flexShrink: 0,
                   }}
                 >
                   <Icon size={36} color={theme.colors.white} />
                 </div>
                 <h3
                   style={{
-                    fontSize: '1.25rem',
-                    fontWeight: '700',
+                    fontSize: 'clamp(1.1rem, 2vw, 1.25rem)',
+                    fontWeight: 700,
                     color: theme.colors.white,
                     marginBottom: '1rem',
                   }}
@@ -115,9 +118,9 @@ export default function ApplicationsSection() {
                 </h3>
                 <p
                   style={{
-                    fontSize: '1rem',
+                    fontSize: 'clamp(0.95rem, 1.9vw, 1rem)',
                     color: theme.colors.lightGray,
-                    lineHeight: '1.6',
+                    lineHeight: 1.6,
                   }}
                 >
                   {app.description}
@@ -131,14 +134,14 @@ export default function ApplicationsSection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '2rem',
           }}
         >
           <NeoCard
             style={{
               background: theme.colors.baseNavy,
-              minHeight: '400px',
+              minHeight: '320px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
@@ -146,7 +149,7 @@ export default function ApplicationsSection() {
             }}
           >
             <img
-              src="/src/assets/{148DCD25-7111-42CF-AFEF-36A4C8400F43}.png"
+              src={appMock}
               alt="Rezzy — мобильный интерфейс"
               style={{
                 width: '100%',
@@ -161,8 +164,8 @@ export default function ApplicationsSection() {
           <NeoCard>
             <h3
               style={{
-                fontSize: '1.75rem',
-                fontWeight: '700',
+                fontSize: 'clamp(1.4rem, 2.4vw, 1.75rem)',
+                fontWeight: 700,
                 color: theme.colors.white,
                 marginBottom: '1.5rem',
               }}
@@ -171,9 +174,9 @@ export default function ApplicationsSection() {
             </h3>
             <p
               style={{
-                fontSize: '1.125rem',
+                fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
                 color: theme.colors.lightGray,
-                lineHeight: '1.7',
+                lineHeight: 1.7,
                 marginBottom: '2rem',
               }}
             >
@@ -204,13 +207,15 @@ export default function ApplicationsSection() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
+                    gap: '1rem',
+                    flexWrap: 'wrap',
                   }}
                 >
                   <span
                     style={{
-                      fontSize: '1rem',
+                      fontSize: '0.95rem',
                       color: theme.colors.white,
-                      fontWeight: '600',
+                      fontWeight: 600,
                     }}
                   >
                     {item.label}
@@ -219,7 +224,8 @@ export default function ApplicationsSection() {
                     style={{
                       fontSize: '0.875rem',
                       color: theme.colors.accentPrimary,
-                      fontWeight: '700',
+                      fontWeight: 700,
+                      whiteSpace: 'nowrap',
                     }}
                   >
                     {item.value}
@@ -236,10 +242,12 @@ export default function ApplicationsSection() {
           position: 'absolute',
           bottom: '2rem',
           right: '4rem',
-          fontSize: '1rem',
+          fontSize: 'clamp(0.75rem, 1.6vw, 1rem)',
           color: theme.colors.mediumGray,
-          fontWeight: '600',
+          fontWeight: 600,
           letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
         }}
       >
         05 / ПРИМЕНЕНИЕ СТИЛЯ

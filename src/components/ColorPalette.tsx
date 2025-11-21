@@ -16,6 +16,7 @@ function ColorItem({ color, name, hex, usage }: ColorItemProps) {
         flexDirection: 'column',
         alignItems: 'center',
         gap: '1rem',
+        maxWidth: '180px',
       }}
     >
       <div
@@ -41,10 +42,12 @@ function ColorItem({ color, name, hex, usage }: ColorItemProps) {
       >
         <span
           style={{
-            fontSize: '1.25rem',
-            fontWeight: '700',
+            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+            fontWeight: 700,
             color: theme.colors.white,
             textShadow: '0 2px 8px rgba(0,0,0,0.5)',
+            textAlign: 'center',
+            padding: '0 0.5rem',
           }}
         >
           {hex}
@@ -53,8 +56,8 @@ function ColorItem({ color, name, hex, usage }: ColorItemProps) {
       <div style={{ textAlign: 'center' }}>
         <div
           style={{
-            fontSize: '1rem',
-            fontWeight: '700',
+            fontSize: 'clamp(0.95rem, 1.9vw, 1rem)',
+            fontWeight: 700,
             color: theme.colors.white,
             marginBottom: '0.5rem',
           }}
@@ -66,6 +69,7 @@ function ColorItem({ color, name, hex, usage }: ColorItemProps) {
             fontSize: '0.875rem',
             color: theme.colors.mediumGray,
             maxWidth: '160px',
+            lineHeight: 1.5,
           }}
         >
           {usage}
@@ -125,12 +129,18 @@ export default function ColorPalette() {
   ];
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '4rem',
+      }}
+    >
       <NeoCard>
         <h3
           style={{
-            fontSize: '1.75rem',
-            fontWeight: '700',
+            fontSize: 'clamp(1.4rem, 2.4vw, 1.75rem)',
+            fontWeight: 700,
             color: theme.colors.white,
             marginBottom: '2rem',
           }}
@@ -140,7 +150,7 @@ export default function ColorPalette() {
         <div
           style={{
             display: 'flex',
-            gap: '3rem',
+            gap: '2.5rem',
             justifyContent: 'center',
             flexWrap: 'wrap',
           }}
@@ -154,8 +164,8 @@ export default function ColorPalette() {
       <NeoCard>
         <h3
           style={{
-            fontSize: '1.75rem',
-            fontWeight: '700',
+            fontSize: 'clamp(1.4rem, 2.4vw, 1.75rem)',
+            fontWeight: 700,
             color: theme.colors.white,
             marginBottom: '2rem',
           }}
@@ -165,7 +175,7 @@ export default function ColorPalette() {
         <div
           style={{
             display: 'flex',
-            gap: '3rem',
+            gap: '2.5rem',
             justifyContent: 'center',
             flexWrap: 'wrap',
           }}

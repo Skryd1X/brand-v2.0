@@ -20,15 +20,16 @@ export default function SectionHeader({ number, title, subtitle }: SectionHeader
       <div
         style={{
           position: 'absolute',
-          top: '-32px',
-          left: '-8px',
-          fontSize: '6.5rem',
+          top: '-24px',
+          left: '-4px',
+          fontSize: 'clamp(3.5rem, 8vw, 6.5rem)',
           fontWeight: 900,
           letterSpacing: '0.18em',
-          color: 'rgba(255, 255, 255, 0.07)', // вместо градиента
+          color: 'rgba(255, 255, 255, 0.07)',
           pointerEvents: 'none',
           userSelect: 'none',
           mixBlendMode: 'normal',
+          whiteSpace: 'nowrap',
         }}
       >
         {number}
@@ -37,7 +38,7 @@ export default function SectionHeader({ number, title, subtitle }: SectionHeader
       {/* Заголовок секции */}
       <h2
         style={{
-          fontSize: '2.5rem',
+          fontSize: 'clamp(1.6rem, 3vw, 2.5rem)',
           fontWeight: 800,
           color: theme.colors.white,
           marginBottom: '0.75rem',
@@ -49,9 +50,9 @@ export default function SectionHeader({ number, title, subtitle }: SectionHeader
       {/* Подзаголовок */}
       <p
         style={{
-          fontSize: '1.125rem',
+          fontSize: 'clamp(0.95rem, 2vw, 1.125rem)',
           color: theme.colors.lightGray,
-          maxWidth: '640px',
+          maxWidth: 'min(640px, 100%)',
           lineHeight: 1.7,
         }}
       >

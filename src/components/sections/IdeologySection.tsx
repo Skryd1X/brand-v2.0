@@ -8,25 +8,33 @@ export default function IdeologySection() {
     {
       icon: Users,
       title: 'Что такое Rezzy',
-      text: 'Rezzy — сервис онлайн-бронирования для ресторанов, кафе, лаунж-баров, компьютерных клубов, автомоек и других сервисных заведений. Мы помогаем людям экономить время, а бизнесу — зарабатывать больше за счёт цифровизации процессов.',
+      text:
+        'Rezzy — сервис онлайн-бронирования для ресторанов, кафе, лаунж-баров, компьютерных клубов, автомоек и других сервисных заведений. ' +
+        'Мы помогаем людям экономить время, а бизнесу — зарабатывать больше за счёт цифровизации процессов.',
       gradient: theme.gradients.accent,
     },
     {
       icon: Clock,
       title: 'История и контекст',
-      text: 'Rezzy появился как ответ на хаос с бронированием через звонки и мессенджеры. Цель сервиса — сделать бронирование в Узбекистане и СНГ таким же простым и привычным, как заказ такси или доставки еды.',
+      text:
+        'Rezzy появился как ответ на хаос с бронированием через звонки и мессенджеры. ' +
+        'Цель сервиса — сделать бронирование в Узбекистане и СНГ таким же простым и привычным, как заказ такси или доставки еды.',
       gradient: theme.gradients.warm,
     },
     {
       icon: Target,
       title: 'Миссия',
-      text: 'Мы создаём удобный сервис, который экономит время людям и помогает заведениям зарабатывать больше за счёт прозрачных процессов, аналитики и цифровых инструментов.',
+      text:
+        'Мы создаём удобный сервис, который экономит время людям и помогает заведениям зарабатывать больше ' +
+        'за счёт прозрачных процессов, аналитики и цифровых инструментов.',
       gradient: theme.gradients.vibrant,
     },
     {
       icon: TrendingUp,
       title: 'Видение и ценности',
-      text: 'Наше видение — стать ведущим сервисом бронирования в Узбекистане и СНГ, постепенно превратив Rezzy в суперапп для городских развлечений и сервисов. Ценности бренда: удобство, современность, статус, надёжность и инновации.',
+      text:
+        'Наше видение — стать ведущим сервисом бронирования в Узбекистане и СНГ, постепенно превратив Rezzy в суперапп ' +
+        'для городских развлечений и сервисов. Ценности бренда: удобство, современность, статус, надёжность и инновации.',
       gradient: theme.gradients.purple,
     },
   ];
@@ -39,8 +47,9 @@ export default function IdeologySection() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '4rem 8rem 4rem 12rem',
+        padding: '4rem 5vw 4rem 7vw', // вместо жёстких 4/8/12 — адаптивные отступы
         position: 'relative',
+        boxSizing: 'border-box',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
@@ -53,7 +62,7 @@ export default function IdeologySection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '2rem',
           }}
         >
@@ -63,8 +72,8 @@ export default function IdeologySection() {
               <NeoCard key={index} hover>
                 <div
                   style={{
-                    width: '80px',
-                    height: '80px',
+                    width: '72px',
+                    height: '72px',
                     borderRadius: theme.borderRadius.md,
                     background: block.gradient,
                     display: 'flex',
@@ -74,23 +83,23 @@ export default function IdeologySection() {
                     boxShadow: '0 8px 32px rgba(22, 160, 133, 0.3)',
                   }}
                 >
-                  <Icon size={40} color={theme.colors.white} />
+                  <Icon size={36} color={theme.colors.white} />
                 </div>
                 <h3
                   style={{
-                    fontSize: '1.75rem',
-                    fontWeight: '700',
+                    fontSize: 'clamp(1.25rem, 2.2vw, 1.75rem)',
+                    fontWeight: 700,
                     color: theme.colors.white,
-                    marginBottom: '1rem',
+                    marginBottom: '0.75rem',
                   }}
                 >
                   {block.title}
                 </h3>
                 <p
                   style={{
-                    fontSize: '1.125rem',
+                    fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
                     color: theme.colors.lightGray,
-                    lineHeight: '1.7',
+                    lineHeight: 1.7,
                   }}
                 >
                   {block.text}
@@ -103,8 +112,8 @@ export default function IdeologySection() {
         <NeoCard style={{ marginTop: '2rem' }}>
           <h3
             style={{
-              fontSize: '1.75rem',
-              fontWeight: '700',
+              fontSize: 'clamp(1.25rem, 2.2vw, 1.75rem)',
+              fontWeight: 700,
               color: theme.colors.white,
               marginBottom: '1rem',
             }}
@@ -113,9 +122,9 @@ export default function IdeologySection() {
           </h3>
           <p
             style={{
-              fontSize: '1.125rem',
+              fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
               color: theme.colors.lightGray,
-              lineHeight: '1.7',
+              lineHeight: 1.7,
               marginBottom: '0.75rem',
             }}
           >
@@ -126,13 +135,16 @@ export default function IdeologySection() {
           </p>
           <p
             style={{
-              fontSize: '1.125rem',
+              fontSize: 'clamp(1rem, 2.2vw, 1.125rem)',
               color: theme.colors.white,
               fontWeight: 600,
               marginTop: '0.5rem',
             }}
           >
-            Слоган: <span style={{ color: theme.colors.accentGreen }}>«Rezzy — бронируй, а не жди»</span>
+            Слоган:{' '}
+            <span style={{ color: theme.colors.accentGreen }}>
+              «Rezzy — бронируй, а не жди»
+            </span>
           </p>
         </NeoCard>
       </div>
@@ -142,10 +154,12 @@ export default function IdeologySection() {
           position: 'absolute',
           bottom: '2rem',
           right: '4rem',
-          fontSize: '1rem',
+          fontSize: 'clamp(0.75rem, 1.6vw, 1rem)',
           color: theme.colors.mediumGray,
-          fontWeight: '600',
+          fontWeight: 600,
           letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
         }}
       >
         01 / ИДЕОЛОГИЯ БРЕНДА
