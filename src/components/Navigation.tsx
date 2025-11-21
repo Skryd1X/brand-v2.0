@@ -1,4 +1,4 @@
-import { Menu, Home, Target, MessageCircle, Palette, Image, FileText } from 'lucide-react';
+import { Home, Target, Users, MessageCircle, Palette, Image, FileText } from 'lucide-react';
 import { theme } from '../theme';
 
 interface NavigationProps {
@@ -7,12 +7,12 @@ interface NavigationProps {
 }
 
 const sections = [
-  { id: 'intro', label: 'Intro', icon: Home },
+  { id: 'intro', label: 'Обзор бренда', icon: Home },
   { id: 'ideology', label: 'Идеология', icon: Target },
-  { id: 'audience', label: 'Целевая аудитория', icon: Target },
+  { id: 'audience', label: 'Целевая аудитория', icon: Users },
   { id: 'tone', label: 'Tone of Voice', icon: MessageCircle },
   { id: 'visual', label: 'Визуальная айдентика', icon: Palette },
-  { id: 'applications', label: 'Применения', icon: Image },
+  { id: 'applications', label: 'Применение стиля', icon: Image },
   { id: 'ui', label: 'UI-система Rezzy', icon: FileText },
 ];
 
@@ -32,9 +32,10 @@ export default function Navigation({ activeSection, onNavigate }: NavigationProp
       }}
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        {sections.map((section, index) => {
+        {sections.map((section) => {
           const Icon = section.icon;
           const isActive = activeSection === section.id;
+
           return (
             <button
               key={section.id}
@@ -51,7 +52,6 @@ export default function Navigation({ activeSection, onNavigate }: NavigationProp
                 alignItems: 'center',
                 justifyContent: 'center',
                 transition: 'all 0.3s ease',
-                position: 'relative',
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {

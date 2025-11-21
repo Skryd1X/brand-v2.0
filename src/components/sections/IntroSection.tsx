@@ -1,5 +1,4 @@
 import { theme } from '../../theme';
-import SectionHeader from '../SectionHeader';
 import NeoCard from '../NeoCard';
 
 export default function IntroSection() {
@@ -12,10 +11,18 @@ export default function IntroSection() {
         flexDirection: 'column',
         justifyContent: 'center',
         padding: '4rem 8rem 4rem 12rem',
+        position: 'relative',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '4rem',
+            alignItems: 'center',
+          }}
+        >
           <div>
             <div
               style={{
@@ -48,9 +55,20 @@ export default function IntroSection() {
                 marginBottom: '1.5rem',
               }}
             >
-              Rezzy — это инновационная платформа бронирования времени, которая ценит каждую минуту
-              пользователя. Мы создали агрегатор, который объединяет все возможности бронирования в одном
-              месте: от ресторанов и салонов красоты до компьютерных клубов и коворкингов.
+              Rezzy — это сервис онлайн-бронирования, который объединяет в одном приложении рестораны,
+              кафе, лаундж-бары, компьютерные клубы, автомойки и другие сервисные заведения.
+              Мы помогаем пользователям быстро находить свободные слоты и фиксировать бронь без звонков и лишних диалогов.
+            </p>
+            <p
+              style={{
+                fontSize: '1.125rem',
+                color: theme.colors.lightGray,
+                lineHeight: '1.7',
+                marginBottom: '1.5rem',
+              }}
+            >
+              Для заведений Rezzy — это способ цифровизировать процессы, сократить количество пропущенных
+              звонков, повысить заполняемость и получать понятную аналитику по загрузке.
             </p>
             <p
               style={{
@@ -59,8 +77,8 @@ export default function IntroSection() {
                 lineHeight: '1.7',
               }}
             >
-              Наша платформа позволяет пользователям быстро находить и бронировать услуги, экономя самый
-              ценный ресурс — время.
+              Цель бренда — стать ведущим сервисом бронирования в Узбекистане и СНГ и постепенно превратить
+              Rezzy в суперапп для управления временем и досугом.
             </p>
           </div>
 
@@ -102,7 +120,7 @@ export default function IntroSection() {
           letterSpacing: '0.1em',
         }}
       >
-        00 / ВВЕДЕНИЕ
+        00 / ОБЗОР БРЕНДА
       </div>
     </section>
   );

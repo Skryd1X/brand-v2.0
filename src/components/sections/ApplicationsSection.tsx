@@ -1,44 +1,57 @@
 import { theme } from '../../theme';
 import SectionHeader from '../SectionHeader';
 import NeoCard from '../NeoCard';
-import { Smartphone, Monitor, CreditCard, Share2, ShoppingBag, FileText } from 'lucide-react';
+import {
+  Smartphone,
+  Monitor,
+  CreditCard,
+  Share2,
+  ShoppingBag,
+  FileText,
+} from 'lucide-react';
 
 export default function ApplicationsSection() {
   const applications = [
     {
       icon: Smartphone,
-      title: 'Мобильное приложение',
-      description: 'Основная платформа для бронирования. Интуитивный интерфейс с неоморфным дизайном.',
+      title: 'Мобильное приложение Rezzy',
+      description:
+        'Главная точка контакта с пользователем. Бронирование ресторанов, лаунджей, ПК-клубов, автомоек и других сервисов в один тап.',
       gradient: theme.gradients.accent,
     },
     {
       icon: Monitor,
-      title: 'Веб-платформа',
-      description: 'Десктопная версия с расширенными возможностями управления бронированиями.',
+      title: 'Кабинет заведений и веб-версия',
+      description:
+        'Интерфейсы для администраторов: управление бронями, столиками, слотами и аналитикой, выполненные в едином стиле Rezzy.',
       gradient: theme.gradients.vibrant,
     },
     {
       icon: CreditCard,
-      title: 'Платежные системы',
-      description: 'Интеграция логотипа в интерфейсы оплаты и финансовых операций.',
+      title: 'Платёжные сценарии',
+      description:
+        'Экран оплаты, статусы транзакций, экраны подписок и депозита. Использование фирменных цветов в сочетании с системными UI-паттернами.',
       gradient: theme.gradients.warm,
     },
     {
       icon: Share2,
-      title: 'Социальные сети',
-      description: 'Фирменные обложки, аватары и промо-материалы для соцмедиа.',
+      title: 'Социальные сети и промо',
+      description:
+        'Аватары, обложки, превью для сторис и Reels, баннеры для Telegram и VK — всё в единой палитре и с акцентом на иконку Rezzy.',
       gradient: theme.gradients.purple,
     },
     {
       icon: ShoppingBag,
-      title: 'Мерч и сувениры',
-      description: 'Фирменная продукция: футболки, сумки, стикеры, визитки.',
+      title: 'Мерч и предметный брендинг',
+      description:
+        'Худи, свитшоты, футболки, крафт-пакеты, бокалы, блокноты и другая сувенирка с логотипом и фирменными градиентами.',
       gradient: theme.gradients.accent,
     },
     {
       icon: FileText,
-      title: 'Документация',
-      description: 'Официальные документы, презентации и деловая переписка.',
+      title: 'Документы и презентации',
+      description:
+        'Коммерческие предложения, договоры, презентации для инвесторов и партнёров, оформленные в фирменном стиле Rezzy.',
       gradient: theme.gradients.vibrant,
     },
   ];
@@ -58,10 +71,11 @@ export default function ApplicationsSection() {
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
         <SectionHeader
           number="05"
-          title="Применения"
-          subtitle="Примеры использования фирменного стиля Rezzy"
+          title="Применение стиля"
+          subtitle="Где и как используется фирменный стиль Rezzy"
         />
 
+        {/* сетка с зонами применения */}
         <div
           style={{
             display: 'grid',
@@ -113,7 +127,14 @@ export default function ApplicationsSection() {
           })}
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+        {/* мокап + табличка с носителями */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '2rem',
+          }}
+        >
           <NeoCard
             style={{
               background: theme.colors.baseNavy,
@@ -126,7 +147,7 @@ export default function ApplicationsSection() {
           >
             <img
               src="/src/assets/{148DCD25-7111-42CF-AFEF-36A4C8400F43}.png"
-              alt="Rezzy App Mockup"
+              alt="Rezzy — мобильный интерфейс"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -156,8 +177,9 @@ export default function ApplicationsSection() {
                 marginBottom: '2rem',
               }}
             >
-              Фирменный стиль Rezzy адаптируется под различные носители, сохраняя узнаваемость и
-              современный вид.
+              Фирменный стиль Rezzy адаптируется под цифровые и офлайн-носители: от иконки приложения
+              до мерча и презентаций. На всех носителях сохраняются палитра, типографика и характер
+              неоморфного интерфейса.
             </p>
 
             <div
@@ -168,10 +190,10 @@ export default function ApplicationsSection() {
               }}
             >
               {[
-                { label: 'Иконка приложения', value: '1024×1024px' },
-                { label: 'App Store скриншоты', value: '1242×2688px' },
-                { label: 'Баннеры соцсетей', value: '1200×628px' },
-                { label: 'Визитки', value: '90×50mm' },
+                { label: 'Иконка приложения Rezzy', value: '1024 × 1024 px' },
+                { label: 'Скриншоты App Store / Google Play', value: '1242 × 2688 px' },
+                { label: 'Обложки и баннеры соцсетей', value: '1080 × 1920 / 1200 × 628 px' },
+                { label: 'Презентации и PDF', value: '16:9, A4' },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -220,7 +242,7 @@ export default function ApplicationsSection() {
           letterSpacing: '0.1em',
         }}
       >
-        05 / ПРИМЕНЕНИЯ
+        05 / ПРИМЕНЕНИЕ СТИЛЯ
       </div>
     </section>
   );

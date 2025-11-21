@@ -7,34 +7,34 @@ export default function AudienceSection() {
   const segments = [
     {
       icon: Briefcase,
-      title: 'Деловые профессионалы',
-      age: '25-45 лет',
+      title: 'Молодые профессионалы',
+      age: '22–35 лет',
       description:
-        'Занятые люди, которые ценят эффективность и планирование. Используют приложение для бронирования бизнес-встреч, коворкингов и деловых услуг.',
+        'Специалисты в офисе, IT, креативных индустриях. Планируют встречи, ужины и деловые активности через смартфон и предпочитают не тратить время на звонки.',
       gradient: theme.gradients.accent,
     },
     {
       icon: Sparkles,
-      title: 'Активная молодежь',
-      age: '18-30 лет',
+      title: 'Активные горожане',
+      age: '18–30 лет',
       description:
-        'Современные и технически подкованные пользователи. Бронируют рестораны, развлечения, салоны красоты и фитнес.',
+        'Любят рестораны, лаунж-бары, клубы и ивенты. Для них важно быстро найти свободные места и забронировать их в пару тапов, без уточнений и переписок.',
       gradient: theme.gradients.vibrant,
     },
     {
       icon: Coffee,
-      title: 'Городские жители',
-      age: '30-50 лет',
+      title: 'Пары и компании друзей',
+      age: '20–40 лет',
       description:
-        'Семейные люди, которые планируют досуг и бытовые услуги. Ценят удобство и надежность сервиса.',
+        'Планируют совместный досуг: рестораны, кофе, вечерние посиделки, компьютерные клубы. Ценят сервис, который помогает сразу видеть доступные слоты и формат заведения.',
       gradient: theme.gradients.warm,
     },
     {
       icon: Heart,
-      title: 'Заботливые родители',
-      age: '28-45 лет',
+      title: 'Семьи и автолюбители',
+      age: '25–40 лет',
       description:
-        'Организовывают досуг детей, бронируют семейные мероприятия, медицинские и образовательные услуги.',
+        'Организуют семейный отдых и решают бытовые задачи: бронирование семейных заведений, автомоек, сервисных услуг. Им важны надёжность, прозрачность и напоминания.',
       gradient: theme.gradients.purple,
     },
   ];
@@ -55,7 +55,7 @@ export default function AudienceSection() {
         <SectionHeader
           number="02"
           title="Целевая аудитория"
-          subtitle="Основные сегменты пользователей платформы Rezzy"
+          subtitle="Кому нужен Rezzy: ключевые сегменты, поведение и боли пользователей"
         />
 
         <div
@@ -70,7 +70,14 @@ export default function AudienceSection() {
             const Icon = segment.icon;
             return (
               <NeoCard key={index} hover>
-                <div style={{ display: 'flex', alignItems: 'start', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'start',
+                    gap: '1.5rem',
+                    marginBottom: '1.5rem',
+                  }}
+                >
                   <div
                     style={{
                       width: '64px',
@@ -130,14 +137,28 @@ export default function AudienceSection() {
               marginBottom: '1rem',
             }}
           >
-            Общие характеристики аудитории
+            Общие характеристики и инсайты
           </h3>
+
+          <p
+            style={{
+              fontSize: '1.125rem',
+              color: theme.colors.lightGray,
+              lineHeight: '1.7',
+              marginBottom: '1.5rem',
+            }}
+          >
+            Мужчины и женщины 18–40 лет, активные пользователи смартфонов. Они ценят комфорт, статус и
+            цифровые сервисы, которые экономят время и снимают необходимость лишних звонков и уточнений.
+          </p>
+
           <div
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
               gap: '2rem',
-              marginTop: '2rem',
+              marginTop: '1rem',
+              marginBottom: '2rem',
             }}
           >
             <div>
@@ -154,7 +175,7 @@ export default function AudienceSection() {
                 85%
               </div>
               <p style={{ fontSize: '1rem', color: theme.colors.lightGray }}>
-                Используют смартфоны для повседневных задач
+                Используют смартфон как основной инструмент для решения повседневных задач.
               </p>
             </div>
             <div>
@@ -171,7 +192,7 @@ export default function AudienceSection() {
                 70%
               </div>
               <p style={{ fontSize: '1rem', color: theme.colors.lightGray }}>
-                Предпочитают онлайн-бронирование звонкам
+                Предпочитают онлайн-бронирование звонкам и перепискам в мессенджерах.
               </p>
             </div>
             <div>
@@ -188,10 +209,60 @@ export default function AudienceSection() {
                 92%
               </div>
               <p style={{ fontSize: '1rem', color: theme.colors.lightGray }}>
-                Ценят экономию времени превыше всего
+                Считают экономию времени ключевым фактором при выборе сервиса.
               </p>
             </div>
           </div>
+
+          <h4
+            style={{
+              fontSize: '1.25rem',
+              fontWeight: '700',
+              color: theme.colors.white,
+              marginBottom: '0.75rem',
+            }}
+          >
+            Болевые точки текущего рынка
+          </h4>
+          <ul
+            style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+              gap: '0.75rem 2rem',
+            }}
+          >
+            {[
+              'Бронирование в основном через звонки — это долго и неудобно.',
+              'Заявки в мессенджерах теряются, нет единого центра управления.',
+              'Нет прозрачного подтверждения брони и уведомлений для гостей.',
+              'Сложно сравнить разные заведения и быстро найти свободные места.',
+            ].map((point, idx) => (
+              <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                <span
+                  style={{
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '999px',
+                    marginTop: '0.4rem',
+                    background: theme.colors.accentPrimary,
+                    flexShrink: 0,
+                  }}
+                />
+                <span
+                  style={{
+                    fontSize: '1rem',
+                    color: theme.colors.lightGray,
+                    lineHeight: '1.6',
+                  }}
+                >
+                  {point}
+                </span>
+              </li>
+            ))}
+          </ul>
         </NeoCard>
       </div>
 

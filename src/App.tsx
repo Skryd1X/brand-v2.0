@@ -15,10 +15,10 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['intro', 'ideology', 'audience', 'tone', 'visual', 'applications', 'ui'];
+      const sectionIds = ['intro', 'ideology', 'audience', 'tone', 'visual', 'applications', 'ui'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-      for (const sectionId of sections) {
+      for (const sectionId of sectionIds) {
         const element = document.getElementById(sectionId);
         if (element) {
           const { offsetTop, offsetHeight } = element;
@@ -35,9 +35,10 @@ function App() {
   }, []);
 
   const handleNavigate = (sectionId: string) => {
+    setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -88,7 +89,7 @@ function App() {
         className="no-print"
       >
         <Download size={20} />
-        Export to PDF
+        Save as PDF
       </button>
 
       <IntroSection />

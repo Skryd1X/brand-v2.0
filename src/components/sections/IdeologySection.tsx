@@ -4,29 +4,29 @@ import NeoCard from '../NeoCard';
 import { Clock, Target, TrendingUp, Users } from 'lucide-react';
 
 export default function IdeologySection() {
-  const values = [
+  const blocks = [
+    {
+      icon: Users,
+      title: 'Что такое Rezzy',
+      text: 'Rezzy — сервис онлайн-бронирования для ресторанов, кафе, лаунж-баров, компьютерных клубов, автомоек и других сервисных заведений. Мы помогаем людям экономить время, а бизнесу — зарабатывать больше за счёт цифровизации процессов.',
+      gradient: theme.gradients.accent,
+    },
     {
       icon: Clock,
-      title: 'История',
-      text: 'Rezzy создан командой профессионалов, которые понимают ценность времени в современном мире.',
-      gradient: theme.gradients.accent,
+      title: 'История и контекст',
+      text: 'Rezzy появился как ответ на хаос с бронированием через звонки и мессенджеры. Цель сервиса — сделать бронирование в Узбекистане и СНГ таким же простым и привычным, как заказ такси или доставки еды.',
+      gradient: theme.gradients.warm,
     },
     {
       icon: Target,
       title: 'Миссия',
-      text: 'Сделать процесс бронирования максимально простым, удобным и быстрым для каждого пользователя.',
-      gradient: theme.gradients.warm,
-    },
-    {
-      icon: TrendingUp,
-      title: 'Польза',
-      text: 'Экономия времени, удобный поиск, мгновенное бронирование и управление всеми записями в одном приложении.',
+      text: 'Мы создаём удобный сервис, который экономит время людям и помогает заведениям зарабатывать больше за счёт прозрачных процессов, аналитики и цифровых инструментов.',
       gradient: theme.gradients.vibrant,
     },
     {
-      icon: Users,
-      title: 'Ценности',
-      text: 'Прозрачность, надежность, инновации и забота о времени каждого клиента.',
+      icon: TrendingUp,
+      title: 'Видение и ценности',
+      text: 'Наше видение — стать ведущим сервисом бронирования в Узбекистане и СНГ, постепенно превратив Rezzy в суперапп для городских развлечений и сервисов. Ценности бренда: удобство, современность, статус, надёжность и инновации.',
       gradient: theme.gradients.purple,
     },
   ];
@@ -47,7 +47,7 @@ export default function IdeologySection() {
         <SectionHeader
           number="01"
           title="Идеология бренда"
-          subtitle="Основные принципы и ценности, которые определяют развитие Rezzy"
+          subtitle="Кто мы, зачем существуем и как Rezzy меняет подход к бронированию"
         />
 
         <div
@@ -57,8 +57,8 @@ export default function IdeologySection() {
             gap: '2rem',
           }}
         >
-          {values.map((value, index) => {
-            const Icon = value.icon;
+          {blocks.map((block, index) => {
+            const Icon = block.icon;
             return (
               <NeoCard key={index} hover>
                 <div
@@ -66,7 +66,7 @@ export default function IdeologySection() {
                     width: '80px',
                     height: '80px',
                     borderRadius: theme.borderRadius.md,
-                    background: value.gradient,
+                    background: block.gradient,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -84,7 +84,7 @@ export default function IdeologySection() {
                     marginBottom: '1rem',
                   }}
                 >
-                  {value.title}
+                  {block.title}
                 </h3>
                 <p
                   style={{
@@ -93,7 +93,7 @@ export default function IdeologySection() {
                     lineHeight: '1.7',
                   }}
                 >
-                  {value.text}
+                  {block.text}
                 </p>
               </NeoCard>
             );
@@ -109,18 +109,30 @@ export default function IdeologySection() {
               marginBottom: '1rem',
             }}
           >
-            Позиционирование
+            Позиционирование и слоган
           </h3>
           <p
             style={{
               fontSize: '1.125rem',
               color: theme.colors.lightGray,
               lineHeight: '1.7',
+              marginBottom: '0.75rem',
             }}
           >
-            Rezzy позиционируется как современная технологичная платформа для умных людей, которые ценят
-            своё время и предпочитают эффективные digital-решения. Мы объединяем все виды бронирований в
-            одном удобном интерфейсе, создавая экосистему для управления временем.
+            Rezzy — первое приложение для онлайн-бронирования в Узбекистане, объединяющее рестораны, кафе,
+            лаунж-бары, компьютерные клубы и автомойки. Мы делаем бронирование быстрым, понятным и
+            технологичным для пользователей и партнёров, превращая Rezzy в удобную экосистему для управления
+            временем и посещениями.
+          </p>
+          <p
+            style={{
+              fontSize: '1.125rem',
+              color: theme.colors.white,
+              fontWeight: 600,
+              marginTop: '0.5rem',
+            }}
+          >
+            Слоган: <span style={{ color: theme.colors.accentGreen }}>«Rezzy — бронируй, а не жди»</span>
           </p>
         </NeoCard>
       </div>

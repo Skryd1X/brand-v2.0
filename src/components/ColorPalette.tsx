@@ -65,7 +65,7 @@ function ColorItem({ color, name, hex, usage }: ColorItemProps) {
           style={{
             fontSize: '0.875rem',
             color: theme.colors.mediumGray,
-            maxWidth: '140px',
+            maxWidth: '160px',
           }}
         >
           {usage}
@@ -77,16 +77,51 @@ function ColorItem({ color, name, hex, usage }: ColorItemProps) {
 
 export default function ColorPalette() {
   const backgrounds = [
-    { color: theme.colors.baseDeep, name: 'Base Deep', hex: '#140C30', usage: 'Основной фон' },
-    { color: theme.colors.baseNavy, name: 'Base Navy', hex: '#14253E', usage: 'Карточки, меню' },
-    { color: theme.colors.baseBlueGreen, name: 'Base Blue Green', hex: '#153D4C', usage: 'Контейнеры' },
+    {
+      color: theme.colors.baseDeep, // #140C30
+      name: 'Base Deep',
+      hex: '#140C30',
+      usage: 'Глубокий фон, общий бэкграунд экрана и крупных секций.',
+    },
+    {
+      color: theme.colors.baseNavy, // #14253E
+      name: 'Base Navy',
+      hex: '#14253E',
+      usage: 'Карточки, панели, навигация.',
+    },
+    {
+      color: theme.colors.baseBlueGreen, // #153D4C
+      name: 'Base Blue Green',
+      hex: '#153D4C',
+      usage: 'Контейнеры, подложки под контент.',
+    },
   ];
 
   const accents = [
-    { color: theme.colors.accentMid, name: 'Accent Mid', hex: '#15565B', usage: 'Hover состояния' },
-    { color: theme.colors.accentSoft, name: 'Accent Soft', hex: '#156F69', usage: 'Второстепенные элементы' },
-    { color: theme.colors.accentSecondary, name: 'Accent Secondary', hex: '#168777', usage: 'Градиенты' },
-    { color: theme.colors.accentPrimary, name: 'Accent Primary', hex: '#16A085', usage: 'Кнопки, иконки' },
+    {
+      color: theme.colors.accentMid, // #15565B
+      name: 'Accent Mid',
+      hex: '#15565B',
+      usage: 'Hover-состояния и активные элементы.',
+    },
+    {
+      color: theme.colors.accentSoft, // #156F69
+      name: 'Accent Soft',
+      hex: '#156F69',
+      usage: 'Второстепенные контролы, иконки.',
+    },
+    {
+      color: theme.colors.accentSecondary, // #168777
+      name: 'Accent Secondary',
+      hex: '#168777',
+      usage: 'Градиенты, акцентные фоновые блоки.',
+    },
+    {
+      color: theme.colors.accentPrimary, // #16A085
+      name: 'Accent Primary',
+      hex: '#16A085',
+      usage: 'Кнопки действия, ключевые CTA и подтверждения.',
+    },
   ];
 
   return (
@@ -100,7 +135,7 @@ export default function ColorPalette() {
             marginBottom: '2rem',
           }}
         >
-          Фоновые цвета
+          Фоновые цвета интерфейса
         </h3>
         <div
           style={{
@@ -125,7 +160,7 @@ export default function ColorPalette() {
             marginBottom: '2rem',
           }}
         >
-          Акцентные цвета
+          Акцентные цвета Rezzy
         </h3>
         <div
           style={{

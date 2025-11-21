@@ -31,20 +31,18 @@ html {
     background: white !important;
   }
 
+  /* скрываем только то, что реально не нужно в PDF */
   .no-print {
-    display: none !important;
-  }
-
-  section {
-    page-break-inside: avoid;
-    page-break-after: always;
-  }
-
-  button {
     display: none !important;
   }
 
   nav {
     display: none !important;
+  }
+
+  /* каждая секция — с новой страницы, без разрывов внутри */
+  section {
+    page-break-inside: avoid;
+    page-break-after: always;
   }
 }

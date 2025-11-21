@@ -24,7 +24,14 @@ export default function VisualSection() {
           subtitle="Логотип, цветовая палитра и фирменный стиль Rezzy"
         />
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '2rem', marginBottom: '3rem' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1.5fr',
+            gap: '2rem',
+            marginBottom: '3rem',
+          }}
+        >
           <NeoCard
             gradient={theme.gradients.accent}
             style={{
@@ -36,7 +43,7 @@ export default function VisualSection() {
             }}
           >
             <img
-              src="/src/assets/{B620A630-29AF-4A07-A8E3-8238DCB61CD6}.png"
+              src="/src/assets/(B620A630-29AF-4A07-A8E3-8238DCB61CD6).png"
               alt="Rezzy Logo"
               style={{
                 width: '240px',
@@ -54,7 +61,7 @@ export default function VisualSection() {
                 textAlign: 'center',
               }}
             >
-              Основной логотип
+              Основной логотип Rezzy
             </div>
           </NeoCard>
 
@@ -77,9 +84,10 @@ export default function VisualSection() {
                 marginBottom: '2rem',
               }}
             >
-              Логотип Rezzy представляет собой стилизованную букву "R", которая символизирует динамичность,
-              движение вперед и стремление к экономии времени. Главные линии отражают простоту
-              использования платформы.
+              Логотип Rezzy — это стилизованная буква «R», построенная на плавных динамичных линиях. Она
+              отражает движение вперёд, цифровой сервис и быстрый путь пользователя: от выбора заведения до
+              подтверждённой брони. Закругления подчеркивают удобство и дружелюбие продукта, а фирменный
+              градиент усиливает ощущение статуса и современности.
             </p>
 
             <div
@@ -110,7 +118,8 @@ export default function VisualSection() {
                     }}
                   />
                   <span style={{ color: theme.colors.lightGray, fontSize: '1rem' }}>
-                    <strong>Основная версия:</strong> Фирменный градиент от пурпурного к винному
+                    <strong>Основная версия:</strong> логотип с фирменным фиолетовым градиентом для цифровой
+                    среды, презентаций и ключевых носителей.
                   </span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -123,7 +132,8 @@ export default function VisualSection() {
                     }}
                   />
                   <span style={{ color: theme.colors.lightGray, fontSize: '1rem' }}>
-                    <strong>Монохром:</strong> Черный или белый для печати и особых случаев
+                    <strong>Монохром:</strong> чёрный или белый логотип для печати, тиснения и случаев, когда
+                    цвет ограничен.
                   </span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -136,7 +146,8 @@ export default function VisualSection() {
                     }}
                   />
                   <span style={{ color: theme.colors.lightGray, fontSize: '1rem' }}>
-                    <strong>Инверт:</strong> Белый логотип на темном фоне
+                    <strong>Инверсия:</strong> белый знак на фирменном тёмном фоне — для промо, баннеров и
+                    цифровых карточек.
                   </span>
                 </div>
               </div>
@@ -144,7 +155,14 @@ export default function VisualSection() {
           </NeoCard>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '3rem' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '2rem',
+            marginBottom: '3rem',
+          }}
+        >
           <NeoCard>
             <h3
               style={{
@@ -162,10 +180,10 @@ export default function VisualSection() {
             </h3>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               {[
-                'Минимальный размер: 32px в высоту для digital, 15mm для print',
-                'Охранная зона: размер равен высоте буквы "R" со всех сторон',
-                'Использовать на контрастных фонах',
-                'Сохранять пропорции при масштабировании',
+                'Минимальный размер: 32 px по высоте для digital, 15 mm — для печати.',
+                'Охранная зона: отступ не менее высоты буквы «R» от края до любых элементов.',
+                'Размещать на контрастных фонах, обеспечивающих хорошую читаемость.',
+                'Всегда сохранять исходные пропорции при масштабировании.',
               ].map((item, i) => (
                 <li
                   key={i}
@@ -210,10 +228,10 @@ export default function VisualSection() {
             </h3>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               {[
-                'Искажать пропорции, изменять цвета, добавлять эффекты',
-                'Размещать на пестрых или низкоконтрастных фонах',
-                'Использовать размытие, тени или другие фильтры',
-                'Изменять расположение элементов логотипа',
+                'Искажать пропорции, растягивать логотип по вертикали или горизонтали.',
+                'Перекрашивать логотип в небрендовые цвета или добавлять случайные градиенты.',
+                'Размещать на пёстрых или низкоконтрастных фонах без подложки.',
+                'Добавлять эффекты: обводки, glow, тени, размытие, контуры и изменять композицию знака.',
               ].map((item, i) => (
                 <li
                   key={i}
@@ -267,7 +285,13 @@ export default function VisualSection() {
           >
             Типографика
           </h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '2rem',
+            }}
+          >
             <div>
               <div
                 style={{
@@ -277,7 +301,7 @@ export default function VisualSection() {
                   marginBottom: '1rem',
                 }}
               >
-                Основной шрифт
+                Заголовки и акценты
               </div>
               <div
                 style={{
@@ -285,12 +309,13 @@ export default function VisualSection() {
                   fontWeight: '700',
                   color: theme.colors.white,
                   marginBottom: '0.5rem',
+                  fontFamily: '"Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
                 }}
               >
                 Montserrat Bold
               </div>
               <p style={{ fontSize: '1rem', color: theme.colors.lightGray }}>
-                Для заголовков и акцентов
+                Используется для H1–H2, ключевых заголовков, кнопок и CTA-элементов.
               </p>
             </div>
             <div>
@@ -302,7 +327,7 @@ export default function VisualSection() {
                   marginBottom: '1rem',
                 }}
               >
-                Текстовый шрифт
+                Основной текст
               </div>
               <div
                 style={{
@@ -310,12 +335,15 @@ export default function VisualSection() {
                   fontWeight: '400',
                   color: theme.colors.white,
                   marginBottom: '0.5rem',
+                  fontFamily:
+                    '"Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
                 }}
               >
-                Montserrat Regular
+                Open Sans Regular
               </div>
               <p style={{ fontSize: '1rem', color: theme.colors.lightGray }}>
-                Для основного текста и описаний
+                Для длинных текстов, описаний и интерфейсных блоков. Обеспечивает хорошую читаемость в
+                приложении и на сайте.
               </p>
             </div>
           </div>

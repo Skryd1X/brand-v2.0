@@ -20,12 +20,27 @@ export default function UISystemSection() {
         <SectionHeader
           number="06"
           title="UI-система Rezzy"
-          subtitle="Неоморфный дизайн и принципы интерфейса"
+          subtitle="Мобильный интерфейс на базе неоморфного дизайна и 8px-сетки"
         />
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '3rem' }}>
+        {/* 4 принципа UI */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '2rem',
+            marginBottom: '3rem',
+          }}
+        >
           <NeoCard hover>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1rem',
+                marginBottom: '1.5rem',
+              }}
+            >
               <div
                 style={{
                   width: '56px',
@@ -56,13 +71,21 @@ export default function UISystemSection() {
                 lineHeight: '1.7',
               }}
             >
-              Мягкие тени и плавные переходы создают объемный эффект. Карточки выглядят как будто
-              выдавлены из фона или утоплены в него.
+              Интерфейс строится на мягких тенях и плавных бликах: элементы выглядят как выдавленные
+              из глубокого фона (#140C30–#153D4C). Это делает Rezzy визуально «живым» и тактильным,
+              но не перегруженным.
             </p>
           </NeoCard>
 
           <NeoCard hover>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1rem',
+                marginBottom: '1.5rem',
+              }}
+            >
               <div
                 style={{
                   width: '56px',
@@ -83,7 +106,7 @@ export default function UISystemSection() {
                   color: theme.colors.white,
                 }}
               >
-                Скругления
+                Пилюли и скругления
               </h3>
             </div>
             <p
@@ -93,13 +116,20 @@ export default function UISystemSection() {
                 lineHeight: '1.7',
               }}
             >
-              Большие радиусы скругления (24-32px) делают интерфейс дружелюбным и современным.
-              Используются во всех элементах UI.
+              Основная форма элементов — вытянутые «пилюли» и карточки со скруглением 24–32 px.
+              Такой пластичный контур используется для кнопок, фильтров, карточек и списков времени.
             </p>
           </NeoCard>
 
           <NeoCard hover>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1rem',
+                marginBottom: '1.5rem',
+              }}
+            >
               <div
                 style={{
                   width: '56px',
@@ -120,7 +150,7 @@ export default function UISystemSection() {
                   color: theme.colors.white,
                 }}
               >
-                Акценты
+                Акцентные градиенты
               </h3>
             </div>
             <p
@@ -130,13 +160,20 @@ export default function UISystemSection() {
                 lineHeight: '1.7',
               }}
             >
-              Яркие бирюзовые и неоновые градиенты выделяют важные элементы. CTA-кнопки и интерактивные
-              элементы с градиентной заливкой.
+              Ключевые действия подсвечиваются градиентом от #168777 к #16A085. Им оформляются
+              основные CTA-кнопки («Забронировать»), активные состояния и важные статусные бейджи.
             </p>
           </NeoCard>
 
           <NeoCard hover>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1rem',
+                marginBottom: '1.5rem',
+              }}
+            >
               <div
                 style={{
                   width: '56px',
@@ -157,7 +194,7 @@ export default function UISystemSection() {
                   color: theme.colors.white,
                 }}
               >
-                Слои
+                Слоистая композиция
               </h3>
             </div>
             <p
@@ -167,12 +204,14 @@ export default function UISystemSection() {
                 lineHeight: '1.7',
               }}
             >
-              Многослойная композиция с тёмным градиентным фоном и светлыми карточками создаёт глубину
-              и иерархию.
+              Нижний слой — глубокий градиент фона, средний — неоморфные карточки, верхний —
+              яркие акцентные элементы. Благодаря этому интерфейс остаётся читаемым даже при
+              большом количестве данных.
             </p>
           </NeoCard>
         </div>
 
+        {/* Примеры компонентов */}
         <NeoCard style={{ marginBottom: '3rem' }}>
           <h3
             style={{
@@ -182,10 +221,17 @@ export default function UISystemSection() {
               marginBottom: '2rem',
             }}
           >
-            Примеры компонентов
+            Примеры компонентов Rezzy
           </h3>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem' }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '2rem',
+            }}
+          >
+            {/* Кнопки */}
             <div>
               <div
                 style={{
@@ -195,13 +241,19 @@ export default function UISystemSection() {
                   marginBottom: '1rem',
                 }}
               >
-                Кнопки
+                Кнопки действия
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1rem',
+                }}
+              >
                 <button
                   style={{
-                    padding: '1rem 2rem',
-                    borderRadius: theme.borderRadius.md,
+                    padding: '1rem 2.25rem',
+                    borderRadius: 999,
                     background: theme.gradients.accent,
                     color: theme.colors.white,
                     border: 'none',
@@ -220,12 +272,12 @@ export default function UISystemSection() {
                     e.currentTarget.style.boxShadow = theme.shadows.glow;
                   }}
                 >
-                  Забронировать
+                  Забронировать столик
                 </button>
                 <button
                   style={{
-                    padding: '1rem 2rem',
-                    borderRadius: theme.borderRadius.md,
+                    padding: '1rem 2.25rem',
+                    borderRadius: 999,
                     background: 'transparent',
                     color: theme.colors.accentPrimary,
                     border: `2px solid ${theme.colors.accentPrimary}`,
@@ -243,11 +295,12 @@ export default function UISystemSection() {
                     e.currentTarget.style.color = theme.colors.accentPrimary;
                   }}
                 >
-                  Подробнее
+                  Смотреть меню
                 </button>
               </div>
             </div>
 
+            {/* Карточка заведения */}
             <div>
               <div
                 style={{
@@ -257,12 +310,12 @@ export default function UISystemSection() {
                   marginBottom: '1rem',
                 }}
               >
-                Карточки
+                Карточка заведения
               </div>
               <div
                 style={{
                   padding: '1.5rem',
-                  borderRadius: theme.borderRadius.md,
+                  borderRadius: 32,
                   background: theme.colors.baseBlueGreen,
                   boxShadow: theme.shadows.neo,
                 }}
@@ -275,7 +328,7 @@ export default function UISystemSection() {
                     marginBottom: '0.5rem',
                   }}
                 >
-                  Ресторан "Вкус"
+                  Resto &amp; Lounge
                 </h4>
                 <p
                   style={{
@@ -284,7 +337,7 @@ export default function UISystemSection() {
                     marginBottom: '1rem',
                   }}
                 >
-                  Итальянская кухня
+                  Итальянская кухня · центр города
                 </p>
                 <div
                   style={{
@@ -294,27 +347,27 @@ export default function UISystemSection() {
                 >
                   <div
                     style={{
-                      padding: '0.5rem 1rem',
-                      borderRadius: theme.borderRadius.sm,
+                      padding: '0.5rem 1.25rem',
+                      borderRadius: 999,
                       background: theme.gradients.accent,
                       color: theme.colors.white,
                       fontSize: '0.875rem',
                       fontWeight: '600',
                     }}
                   >
-                    18:00
+                    Сегодня · 19:30
                   </div>
                   <div
                     style={{
-                      padding: '0.5rem 1rem',
-                      borderRadius: theme.borderRadius.sm,
+                      padding: '0.5rem 1.25rem',
+                      borderRadius: 999,
                       background: theme.colors.baseNavy,
                       color: theme.colors.lightGray,
                       fontSize: '0.875rem',
                       fontWeight: '600',
                     }}
                   >
-                    2 места
+                    Свободно: 3 стола
                   </div>
                 </div>
               </div>
@@ -322,6 +375,7 @@ export default function UISystemSection() {
           </div>
         </NeoCard>
 
+        {/* Система отступов */}
         <NeoCard>
           <h3
             style={{
@@ -341,10 +395,11 @@ export default function UISystemSection() {
               marginBottom: '2rem',
             }}
           >
-            Используется 8px сетка для всех отступов и размеров элементов. Это обеспечивает визуальную
-            гармонию и упрощает разработку.
+            В Rezzy используется единая 8 px-сетка. Все отступы, радиусы и размеры элементов кратны
+            8: 8 / 16 / 24 / 32 / 40 / 48 px. Это упрощает дизайн и разработку, а интерфейс выглядит
+            цельно на всех экранах.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'end' }}>
+          <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-end' }}>
             {[8, 16, 24, 32, 40, 48].map((size) => (
               <div key={size} style={{ textAlign: 'center' }}>
                 <div
