@@ -13,7 +13,7 @@ export default function VisualSection() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '4rem 5vw 4rem 7vw', // адаптивные отступы
+        padding: '4rem 5vw 4rem 7vw',
         position: 'relative',
         boxSizing: 'border-box',
       }}
@@ -25,7 +25,7 @@ export default function VisualSection() {
           subtitle="Логотип, цветовая палитра и фирменный стиль Rezzy"
         />
 
-        {/* Логотип + описание */}
+        {/* Логотип + описание (без файла картинки) */}
         <div
           style={{
             display: 'grid',
@@ -48,17 +48,30 @@ export default function VisualSection() {
               aspectRatio: '1 / 1',
             }}
           >
-            <img
-              src={logoRezzy}
-              alt="Rezzy Logo"
+            <div
               style={{
-                width: '70%',
-                height: '70%',
-                objectFit: 'contain',
-                marginBottom: '1.5rem',
-                filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))',
+                width: '72%',
+                aspectRatio: '4 / 1',
+                borderRadius: 999,
+                background: 'rgba(0,0,0,0.18)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '1.25rem',
               }}
-            />
+            >
+              <span
+                style={{
+                  fontSize: 'clamp(1.6rem, 3vw, 2.1rem)',
+                  fontWeight: 900,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: theme.colors.white,
+                }}
+              >
+                Rezzy
+              </span>
+            </div>
             <div
               style={{
                 fontSize: 'clamp(1.1rem, 2vw, 1.25rem)',
@@ -67,7 +80,7 @@ export default function VisualSection() {
                 textAlign: 'center',
               }}
             >
-              Основной логотип Rezzy
+              Основной логотип Rezzy (словесный знак)
             </div>
           </NeoCard>
 
@@ -90,7 +103,7 @@ export default function VisualSection() {
                 marginBottom: '2rem',
               }}
             >
-              Логотип Rezzy — это стилизованная буква «R», построенная на плавных динамичных линиях. Она
+              Логотип Rezzy строится на мягких, динамичных формах и выразительном словесном знаке. Он
               отражает движение вперёд, цифровой сервис и быстрый путь пользователя: от выбора заведения до
               подтверждённой брони. Закругления подчеркивают удобство и дружелюбие продукта, а фирменный
               градиент усиливает ощущение статуса и современности.
@@ -124,8 +137,8 @@ export default function VisualSection() {
                     }}
                   />
                   <span style={{ color: theme.colors.lightGray, fontSize: '0.95rem', lineHeight: 1.6 }}>
-                    <strong>Основная версия:</strong> логотип с фирменным фиолетовым градиентом для цифровой
-                    среды, презентаций и ключевых носителей.
+                    <strong>Основная версия:</strong> словесный знак Rezzy с фирменным градиентом для
+                    цифровой среды, презентаций и ключевых носителей.
                   </span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -188,7 +201,7 @@ export default function VisualSection() {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {[
                 'Минимальный размер: 32 px по высоте для digital, 15 mm — для печати.',
-                'Охранная зона: отступ не менее высоты буквы «R» от края до любых элементов.',
+                'Охранная зона: отступ не менее высоты буквы «R»/высоты логотипа от края до любых элементов.',
                 'Размещать на контрастных фонах, обеспечивающих хорошую читаемость.',
                 'Всегда сохранять исходные пропорции при масштабировании.',
               ].map((item, i) => (
@@ -238,7 +251,7 @@ export default function VisualSection() {
                 'Искажать пропорции, растягивать логотип по вертикали или горизонтали.',
                 'Перекрашивать логотип в небрендовые цвета или добавлять случайные градиенты.',
                 'Размещать на пёстрых или низкоконтрастных фонах без подложки.',
-                'Добавлять эффекты: обводки, glow, тени, размытие, контуры и изменять композицию знака.',
+                'Добавлять лишние эффекты: обводки, glow, тени, размытие, контуры и изменять композицию знака.',
               ].map((item, i) => (
                 <li
                   key={i}
@@ -267,7 +280,7 @@ export default function VisualSection() {
           </NeoCard>
         </div>
 
-        {/* Цвета */}
+        {/* Цвета и типографика остаются как были */}
         <div style={{ marginBottom: '3rem' }}>
           <h3
             style={{
@@ -282,7 +295,6 @@ export default function VisualSection() {
           <ColorPalette />
         </div>
 
-        {/* Типографика */}
         <NeoCard>
           <h3
             style={{

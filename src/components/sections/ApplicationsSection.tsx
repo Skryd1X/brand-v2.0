@@ -64,7 +64,7 @@ export default function ApplicationsSection() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '4rem 5vw 4rem 7vw', // адаптивные отступы
+        padding: '4rem 5vw 4rem 7vw',
         position: 'relative',
         boxSizing: 'border-box',
       }}
@@ -129,7 +129,7 @@ export default function ApplicationsSection() {
           })}
         </div>
 
-        {/* мокап + табличка с носителями */}
+        {/* Мокап UI вместо картинки */}
         <div
           style={{
             display: 'grid',
@@ -147,17 +147,84 @@ export default function ApplicationsSection() {
               alignItems: 'center',
             }}
           >
-            <img
-              src={appMock}
-              alt="Rezzy — мобильный интерфейс"
+            {/* Простая абстракция экрана приложения */}
+            <div
               style={{
-                width: '100%',
-                height: 'auto',
-                maxWidth: '500px',
-                objectFit: 'contain',
-                borderRadius: theme.borderRadius.md,
+                width: '220px',
+                maxWidth: '80%',
+                aspectRatio: '9 / 19',
+                borderRadius: '32px',
+                background: theme.colors.baseBlueGreen,
+                boxShadow: theme.shadows.neo,
+                padding: '1.2rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.6rem',
               }}
-            />
+            >
+              <div
+                style={{
+                  height: '0.5rem',
+                  borderRadius: 999,
+                  background: theme.gradients.accent,
+                  marginBottom: '0.6rem',
+                }}
+              />
+              {[1, 2, 3].map((row) => (
+                <div
+                  key={row}
+                  style={{
+                    padding: '0.6rem 0.75rem',
+                    borderRadius: '18px',
+                    background: 'rgba(0,0,0,0.22)',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '32px',
+                      height: '32px',
+                      borderRadius: '999px',
+                      background: theme.gradients.accent,
+                    }}
+                  />
+                  <div style={{ flex: 1 }}>
+                    <div
+                      style={{
+                        height: '0.45rem',
+                        borderRadius: 999,
+                        background: 'rgba(255,255,255,0.85)',
+                        marginBottom: '0.25rem',
+                      }}
+                    />
+                    <div
+                      style={{
+                        height: '0.4rem',
+                        borderRadius: 999,
+                        background: 'rgba(255,255,255,0.4)',
+                        width: '70%',
+                      }}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      padding: '0.3rem 0.75rem',
+                      borderRadius: 999,
+                      background: theme.gradients.accent,
+                      fontSize: '0.6rem',
+                      fontWeight: 700,
+                      color: theme.colors.white,
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    19:30
+                  </div>
+                </div>
+              ))}
+            </div>
           </NeoCard>
 
           <NeoCard>

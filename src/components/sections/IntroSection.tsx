@@ -10,7 +10,6 @@ export default function IntroSection() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        // более мягкие, адаптивные отступы, чтобы не ломать мобилку
         padding: '4rem 5vw 4rem 7vw',
         position: 'relative',
         boxSizing: 'border-box',
@@ -19,7 +18,6 @@ export default function IntroSection() {
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
         <div
           style={{
-            // вместо жёсткой grid 1fr/1fr — флекс с переносом
             display: 'flex',
             flexWrap: 'wrap',
             gap: '3rem',
@@ -60,8 +58,9 @@ export default function IntroSection() {
               }}
             >
               Rezzy — это сервис онлайн-бронирования, который объединяет в одном приложении рестораны,
-              кафе, лаундж-бары, компьютерные клубы, автомойки и другие сервисные заведения.
-              Мы помогаем пользователям быстро находить свободные слоты и фиксировать бронь без звонков и лишних диалогов.
+              кафе, лаундж-бары, компьютерные клубы, автомойки и другие сервисные заведения. Мы помогаем
+              пользователям быстро находить свободные слоты и фиксировать бронь без звонков и лишних
+              диалогов.
             </p>
             <p
               style={{
@@ -86,7 +85,7 @@ export default function IntroSection() {
             </p>
           </div>
 
-          {/* Карточка с логотипом */}
+          {/* Карточка вместо логотипа (без изображения) */}
           <div
             style={{
               flex: '1 1 320px',
@@ -100,7 +99,6 @@ export default function IntroSection() {
               style={{
                 width: '100%',
                 maxWidth: '400px',
-                // квадратная карточка, которая ужимается на мобилке
                 aspectRatio: '1 / 1',
                 display: 'flex',
                 alignItems: 'center',
@@ -108,16 +106,34 @@ export default function IntroSection() {
               }}
               hover
             >
-              <img
-                src={logoRezzy}
-                alt="Rezzy Logo"
+              <div
                 style={{
-                  width: '70%',
-                  height: '70%',
-                  objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))',
+                  textAlign: 'center',
                 }}
-              />
+              >
+                <div
+                  style={{
+                    fontSize: 'clamp(2rem, 4vw, 2.6rem)',
+                    fontWeight: 900,
+                    color: theme.colors.white,
+                    marginBottom: '0.5rem',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Rezzy
+                </div>
+                <div
+                  style={{
+                    fontSize: 'clamp(0.9rem, 1.8vw, 1rem)',
+                    color: 'rgba(255,255,255,0.8)',
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Brand Mark
+                </div>
+              </div>
             </NeoCard>
           </div>
         </div>
